@@ -1,13 +1,13 @@
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://akritgupta00:123321@projects.kojl9pn.mongodb.net/?retryWrites=true&w=majority&appName=projects
+      uri: ${SPRING_DATA_MONGODB_URI}
       database: projects
   mail:
     host: smtp.gmail.com
     port: 587
     username: akritttgupta@gmail.com
-    password: meld vcmg iwar ofkf
+    password: ${PASSWORD}
     properties:
       mail:
         smtp:
@@ -18,12 +18,11 @@ spring:
             trust: smtp.gmail.com
 gemini:
   api:
-    key: AIzaSyDwwgyCekyc_mUO9jZQlgc95xEN3Tusblc
+    key: ${GEMINI_API_KEY}
 
 portfolio:
   owner:
     email: akritttgupta@gmail.com
 
-server:
-  port: 8080
+
 
