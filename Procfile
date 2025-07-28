@@ -1,0 +1,1 @@
+web: java -Dhttps.protocols=TLSv1.2 -jar target/demo-0.0.1-SNAPSHOT.jar
