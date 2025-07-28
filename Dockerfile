@@ -16,10 +16,10 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 
-# STAGE 2: Create the final, lightweight image with a compatible JRE
+# STAGE 2: Create the final, robust image with a full JDK
 # This stage takes the .jar file from the 'builder' stage and runs it.
-# We are using eclipse-temurin which has excellent compatibility.
-FROM eclipse-temurin:17-jre
+# Using a full JDK image ensures all security providers are available, which can fix SSL issues.
+FROM eclipse-temurin:17-jdk
 
 # Set the working directory
 WORKDIR /app
