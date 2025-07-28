@@ -1,4 +1,4 @@
-# STAGE 1: Build the application using a Maven image
+# STAGE 1: Build the application using a standard Maven image
 # This stage will compile the code and create the .jar file
 FROM maven:3.8.5-openjdk-17 AS builder
 
@@ -6,20 +6,20 @@ FROM maven:3.8.5-openjdk-17 AS builder
 WORKDIR /app
 
 # Copy the pom.xml to leverage Docker's layer caching.
-# This downloads dependencies only when pom.xml changes.
 COPY pom.xml .
 RUN mvn dependency:go-offline
 
 # Copy the rest of your source code
 COPY src ./src
 
-# Build the application. We skip tests as they are not needed for the final artifact.
+# Build the application, skipping the tests
 RUN mvn clean package -DskipTests
 
 
-# STAGE 2: Create the final, lightweight image with only the JRE
+# STAGE 2: Create the final, lightweight image with a compatible JRE
 # This stage takes the .jar file from the 'builder' stage and runs it.
-FROM openjdk:17-slim
+# We are using eclipse-temurin which has excellent compatibility.
+FROM eclipse-temurin:17-jre
 
 # Set the working directory
 WORKDIR /app
