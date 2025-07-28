@@ -19,7 +19,7 @@ RUN mvn clean package -DskipTests
 
 # STAGE 2: Create the final, lightweight image with only the JRE
 # This stage takes the .jar file from the 'builder' stage and runs it.
-FROM openjdk:17-jre-slim
+FROM openjdk:17-slim
 
 # Set the working directory
 WORKDIR /app
