@@ -31,5 +31,5 @@ COPY --from=builder /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
 # Expose the port the application will run on
 EXPOSE 8080
 
-# Set the command to run the application
-ENTRYPOINT ["java","-jar","app.jar"]
+# Set the command to run the application, forcing TLSv1.2 for SSL connections
+ENTRYPOINT ["java","-Dhttps.protocols=TLSv1.2","-jar","app.jar"]
