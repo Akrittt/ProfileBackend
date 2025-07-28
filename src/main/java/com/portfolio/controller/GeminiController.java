@@ -14,7 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/gemini-proxy")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://profile2-murex.vercel.app/")
 public class GeminiController {
 
     @Value("${gemini.api.key}")

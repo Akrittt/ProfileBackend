@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/resume")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "https://profile2-murex.vercel.app/")
 public class ResumeController {
 
     @GetMapping("/download")

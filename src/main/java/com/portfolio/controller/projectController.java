@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/projects")
-@CrossOrigin(origins="http://localhost:5173")
+@CrossOrigin(origins="https://profile2-murex.vercel.app/")
 public class projectController {
     @Autowired
     private projectsRepository repository;

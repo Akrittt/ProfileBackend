@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:5173") // React app URL
+@CrossOrigin(origins = "https://profile2-murex.vercel.app/")
 public class ContactController {
 
     @Autowired
