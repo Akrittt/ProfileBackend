@@ -1,8 +1,8 @@
 🚀 Project Title & Tagline
 ------------------------
 
-**Project Title:** Portfolio Management System
-**Tagline:** A comprehensive Java Spring Boot application for managing and showcasing personal and professional projects.
+<b>Portfolio Management System</b><br>
+ A comprehensive Java Spring Boot application for managing and showcasing personal and professional projects.
 
 📖 Description
 -------------
